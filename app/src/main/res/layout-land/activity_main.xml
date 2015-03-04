@@ -1,0 +1,99 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity" >
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+        <TextView
+            android:text="@string/label_odometer"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5" />
+        <EditText
+            android:id="@+id/odometer_field"
+            android:hint="@string/hint_odometer"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5" />
+        <Spinner
+            android:id="@+id/odometer_spinner"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+        <TextView
+            android:text="@string/label_fillup"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5" />
+        <EditText
+            android:id="@+id/fillup_field"
+            android:hint="@string/hint_fillup"
+            android:inputType="numberDecimal"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5" />
+        <Spinner
+            android:id="@+id/fueltype_spinner"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+        <TextView
+            android:text="@string/label_price"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5" />
+        <EditText
+            android:id="@+id/price_field"
+            android:hint="@string/hint_price"
+            android:inputType="numberDecimal"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5" />
+        <TextView
+            android:text="@string/label_empty"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+        <Button
+            android:id="@+id/save_button"
+            android:text="@string/label_save"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="saveFillUp" />
+        <Button
+            android:id="@+id/cancel_button"
+            android:text="@string/label_cancel"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="cancel" />
+        <Button
+            android:id="@+id/clear_button"
+            android:text="@string/label_clear"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="clearFields" />
+    </TableRow>
+</TableLayout>
