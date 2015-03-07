@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Fuel Usage Tracker</string>
     <string name="action_settings">Settings</string>
     <string name="label_empty"></string>
@@ -10,8 +9,50 @@
     <string name="label_save">Save</string>
     <string name="label_cancel">Cancel</string>
     <string name="label_clear">Clear</string>
+    <string name="label_add">Add Fillup</string>
+    <string name="label_distanceDriven">Distance Driven</string>
+    <string name="label_distanceDriven_placeholder">325.8 Miles</string>
+    <string name="label_fuelUsed">Fuel Used</string>
+    <string name="label_fuelUsed_placeholder">12,456 Gallons</string>
+    <string name="label_moneySpent">Money Spent</string>
+    <string name="label_moneySpent_placeholder">$31,140.23</string>
+    <string name="label_lastFillup">Last Fillup</string>
+    <string name="label_lastFillup_placeholder">21 days ago</string>
+    <string name="label_mileage">Gas Efficiency</string>
+    <string name="label_mileage_placeholder">24.7 mpg</string>
+    <string name="label_daysActive">Days Active</string>
+    <string name="label_daysActive_placeholder">45 days</string>
+    <string name="label_streak">Longest Streak</string>
+    <string name="label_streak_placeholder">12 days</string>
+    <string name="label_cheapest">Cheapest Gas</string>
+    <string name="label_cheapest_placeholder">$2.33/gal</string>
+    <string name="label_fail">Shortest Streak</string>
+    <string name="label_fail_placeholder">5 days</string>
+    <string name="label_expensive">Expensive Gas</string>
+    <string name="label_expensive_placeholder">$3.31/gal</string>
+    <string name="label_showDash">Show Dashboard</string>
+    <string name="label_showList">Show Fillups</string>
     <string name="hint_odometer">Odometer Reading</string>
     <string name="hint_fillup">Volume of Refill</string>
     <string name="hint_price">Cost of Refill</string>
-
+    <string-array name="fillup_array">
+        <item>2015/01/23 - 24.5 Gallons [$60.35]</item>
+        <item>2015/02/01 - 18.7 Gallons [$45.74]</item>
+        <item>2015/02/08 - 15.6 Gallons [$40.53]</item>
+        <item>2015/02/20 - 24.9 Gallons [$61.65]</item>
+    </string-array>
+    <string-array name="fuel_array">
+        <item>87</item>
+        <item>89</item>
+        <item>96</item>
+        <item>Diesel</item>
+    </string-array>
+    <string-array name="distance_array">
+        <item>Miles</item>
+        <item>Kilometers</item>
+    </string-array>
+    <string-array name="volume_array">
+        <item>Gallons</item>
+        <item>Liters</item>
+    </string-array>
 </resources>

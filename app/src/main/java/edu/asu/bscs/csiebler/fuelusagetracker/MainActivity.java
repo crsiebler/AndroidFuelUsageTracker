@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
 public class MainActivity extends ActionBarActivity {
 
     /**
@@ -55,7 +54,7 @@ public class MainActivity extends ActionBarActivity {
      *
      * @param v
      */
-    public void saveFillUp(View v) {
+    public void saveFillup(View v) {
 
     }
 
@@ -72,6 +71,30 @@ public class MainActivity extends ActionBarActivity {
      * @param v
      */
     public void cancel(View v) {
+
+    }
+
+    /**
+     *
+     * @param v
+     */
+    public void showDash(View v) {
+
+    }
+
+    /**
+     *
+     * @param v
+     */
+    public void showList(View v) {
+
+    }
+
+    /**
+     *
+     * @param v
+     */
+    public void addFillup(View v) {
 
     }
 

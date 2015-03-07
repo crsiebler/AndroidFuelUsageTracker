@@ -1,7 +1,6 @@
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/tableLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context=".MainActivity" >
@@ -31,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5" />
         <Spinner
-            android:id="@+id/odometer_spinner"
+            android:id="@+id/distance_spinner"
+            android:entries="@array/distance_array"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
@@ -68,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5" />
         <Spinner
-            android:id="@+id/fueltype_spinner"
+            android:id="@+id/volume_spinner"
+            android:entries="@array/volume_array"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
