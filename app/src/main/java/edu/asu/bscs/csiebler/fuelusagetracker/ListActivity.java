@@ -3,17 +3,20 @@ package edu.asu.bscs.csiebler.fuelusagetracker;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Copyright 2015 Cory Siebler
@@ -36,11 +39,9 @@ import java.util.Calendar;
  * @author Cory Siebler csiebler@asu.edu
  * @version Apr 25, 2015
  */
-public class MainActivity extends ActionBarActivity {
+public class ListActivity extends ActionBarActivity {
 
-    private EditText odometerField;
-    private EditText volumeField;
-    private EditText priceField;
+    public ListView lview;
 
     /**
      *
@@ -49,11 +50,41 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list);
+    }
 
-        odometerField = (EditText) findViewById(R.id.odometer_field);
-        volumeField = (EditText) findViewById(R.id.fillup_field);
-        priceField = (EditText) findViewById(R.id.price_field);
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        List<Fillup> fillups = new ArrayList<>();
+
+        FillupDB fillupDB = FillupDB.getInstance(this);
+
+        try {
+            fillupDB.copyDB();
+            SQLiteDatabase db = fillupDB.openDB();
+
+            Cursor cursor = db.rawQuery(Globals.QUERY_SELECT_FILLUPS, new String[]{});
+
+            while (cursor.moveToNext()) {
+                Fillup fillup = new Fillup(
+                        cursor.getInt(0), cursor.getInt(1), cursor.getDouble(2), cursor.getDouble(3), new Date(cursor.getLong(4) * 1000L)
+                );
+
+                fillups.add(fillup);
+            }
+
+            cursor.close();
+
+            db.close();
+        } catch (SQLException | IOException e) {
+            Log.d(this.getClass().getSimpleName(), e.getMessage());
+        }
+
+        lview = (ListView) findViewById(R.id.fillup_list);
+        ArrayAdapter<Fillup> adapter = new ArrayAdapter<>(this, R.layout.listview_item, fillups.toArray(new Fillup[fillups.size()]));
+        lview.setAdapter(adapter);
     }
 
     /**
@@ -92,58 +123,7 @@ public class MainActivity extends ActionBarActivity {
      *
      * @param v
      */
-    public void saveFillup(View v) {
-        if (validInput()) {
-            FillupDB fillupDB = FillupDB.getInstance(this);
-
-            try {
-                Log.d(this.getClass().getSimpleName(), "INSERTING NEW FILLUP");
-
-                fillupDB.copyDB();
-                SQLiteDatabase db = fillupDB.openDB();
-
-                db.execSQL(Globals.QUERY_INSERT_FILLUP, new String[]{
-                        odometerField.getText().toString(),
-                        volumeField.getText().toString(),
-                        priceField.getText().toString(),
-                        String.valueOf(Calendar.getInstance().getTimeInMillis() / 1000)
-                });
-
-                db.close();
-
-                Log.d(this.getClass().getSimpleName(), "SUCCESS - FILLUP INSERTED");
-
-                Intent intent = new Intent(this, ListActivity.class);
-                startActivity(intent);
-            } catch (SQLException | IOException e) {
-                Log.d(this.getClass().getSimpleName(), e.getMessage());
-            }
-        } else {
-            Log.d(this.getClass().getSimpleName(), "ERROR: Invalid Input");
-        }
-    }
-
-    private boolean validInput() {
-        return odometerField.getText().length() > 0
-                && volumeField.getText().length() > 0
-                && priceField.getText().length() > 0;
-    }
-
-    /**
-     *
-     * @param v
-     */
-    public void clearFields(View v) {
-        odometerField.setText(R.string.label_empty);
-        volumeField.setText(R.string.label_empty);
-        priceField.setText(R.string.label_empty);
-    }
-
-    /**
-     *
-     * @param v
-     */
-    public void cancel(View v) {
+    public void showDashboard(View v) {
         Intent intent = new Intent(this, DashActivity.class);
         startActivity(intent);
     }

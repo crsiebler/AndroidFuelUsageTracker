@@ -16,6 +16,7 @@
         <EditText
             android:id="@+id/odometer_field"
             android:hint="@string/hint_odometer"
+            android:inputType="numberDecimal"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1.5" />
@@ -106,7 +107,7 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="saveFillUp" />
+            android:onClick="saveFillup" />
     </TableRow>
     <TableRow
         android:layout_width="wrap_content"

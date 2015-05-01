@@ -1,0 +1,15 @@
+DROP TABLE fillup;
+
+CREATE TABLE fillup (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  odometer INTEGER NOT NULL,
+  volume DECIMAL(6,3) NOT NULL,
+  price DECIMAL(6,2) NOT NULL,
+  dateFilled INTEGER NOT NULL
+);
+
+INSERT INTO fillup(odometer, volume, price, dateFilled) VALUES
+  (0, 25.0, 60.00, 1425211200), 
+  (500, 25.0, 62.00, 1427284800),
+  (750, 15.0, 43.00, 1427976000),
+  (1000, 25.0, 58.95, 1430395200);

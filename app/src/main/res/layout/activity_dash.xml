@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".MainActivity">
+    tools:context=".DashActivity">
     <TableRow
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,11 +49,13 @@
         android:layout_height="wrap_content"
         android:padding="2dip" >
         <TextView
+            android:id="@+id/fuelUsed_Label"
             android:text="@string/label_fuelUsed_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <TextView
+            android:id="@+id/moneySpent_Label"
             android:text="@string/label_moneySpent_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
@@ -84,11 +86,13 @@
         android:layout_height="wrap_content"
         android:padding="2dip" >
         <TextView
+            android:id="@+id/distanceDriven_Label"
             android:text="@string/label_distanceDriven_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <TextView
+            android:id="@+id/gasEfficiency_Label"
             android:text="@string/label_mileage_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
@@ -119,11 +123,13 @@
         android:layout_height="wrap_content"
         android:padding="2dip" >
         <TextView
+            android:id="@+id/lastFillup_Label"
             android:text="@string/label_lastFillup_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <TextView
+            android:id="@+id/daysActive_Label"
             android:text="@string/label_daysActive_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
@@ -154,11 +160,13 @@
         android:layout_height="wrap_content"
         android:padding="2dip" >
         <TextView
+            android:id="@+id/longStreak_Label"
             android:text="@string/label_streak_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <TextView
+            android:id="@+id/cheapGas_Label"
             android:text="@string/label_cheapest_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
@@ -189,11 +197,13 @@
         android:layout_height="wrap_content"
         android:padding="2dip" >
         <TextView
+            android:id="@+id/shortStreak_Label"
             android:text="@string/label_fail_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
         <TextView
+            android:id="@+id/expensiveGas_Label"
             android:text="@string/label_expensive_placeholder"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
